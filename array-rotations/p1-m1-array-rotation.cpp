@@ -37,3 +37,6 @@ int main() {
     printArray(arr, n);
     rotate(arr, d, n);;
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(d)
