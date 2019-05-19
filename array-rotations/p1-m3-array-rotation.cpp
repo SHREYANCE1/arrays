@@ -22,6 +22,10 @@ void leftRotate(int arr[], int d, int n){
 
     } else {
         for(int i = 0; i < split; i++){
+            // do the iterations and break the loops and 
+            // code perfectly according to it
+            // any missing conditon or any bad line will not run all the test cases
+            // which has been the case with me so far
         }
     }
 }
