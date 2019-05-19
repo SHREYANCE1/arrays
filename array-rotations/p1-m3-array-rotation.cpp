@@ -15,24 +15,36 @@ int gcd(int a, int b) {
     }
     return gcd(b, a%b);
 }
-
+// jUGGLINg ALGORITHM
 void leftRotate(int arr[], int d, int n){
-    int split = gcd(n, d);
-    if (split == 1) {
-
+    int i;
+    int g_c_d = gcd(n, d);
+    if (g_c_d == 1) {
+        // not efficient for gcd = 1
     } else {
-        for(int i = 0; i < split; i++){
-            // do the iterations and break the loops and 
-            // code perfectly according to it
-            // any missing conditon or any bad line will not run all the test cases
-            // which has been the case with me so far
+        for(int i = 0; i < g_c_d; i++){
+            int temp = arr[i];
+            int j = i;
+            while(1) {
+                int k = j + g_c_d;
+                if (k >= n) {
+                    k = k - n;
+                }
+                if (k == i) {
+                    break;
+                }
+                arr[j] = arr[k];
+                j = k;
+            }
+            arr[j]  = temp;
         }
     }
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+    int arr[] = {1, 3, 5, 7, 9, 11, 13};
     int n = sizeof(arr) / sizeof(arr[0]);
-    int d = 3;
+    int d = 2;
     leftRotate(arr, d, n);
+    printArray(arr, n);
 }
