@@ -105,3 +105,7 @@ int main() {
     int cntSortedAndRotated = findPairWithSumRotated(arr, n, sumR);
     cout << "No of pairs in sorted and rotated array: " << cntSortedAndRotated << endl;
 }
+
+// Time Complexity -
+// findPivot in O(log n)
+// findPairs in O(n)
